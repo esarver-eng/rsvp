@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar Mitzvah RSVP - [Your Son's Name]</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header {
+            margin-bottom: 30px;
+        }
+
+        .star-of-david {
+            font-size: 40px;
+            color: #667eea;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+
+        .event-details {
+            background: #f8f9ff;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .event-details h2 {
+            color: #667eea;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .event-details p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="email"], select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .rsvp-options {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .rsvp-option {
+            flex: 1;
+            position: relative;
+        }
+
+        .rsvp-option input[type="radio"] {
+            display: none;
+        }
+
+        .rsvp-option label {
+            display: block;
+            padding: 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .rsvp-option input[type="radio"]:checked + label {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .guest-count {
+            display: none;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .guest-count.show {
+            display: block;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .whatsapp-share {
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid #e1e5e9;
+        }
+
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            display: inline-block;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .whatsapp-btn:hover {
+            background: #128C7E;
+        }
+
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            .rsvp-options {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="star-of-david">✡</div>
+            <h1>You're Invited!</h1>
+            <p style="color: #666; font-size: 18px;">Please join us for this special celebration</p>
+        </div>
+
+        <div class="event-details">
+            <h2>[Your Son's Name]'s Bar Mitzvah</h2>
+            <p><strong>Date:</strong> [Date - e.g., Saturday, March 15, 2025]</p>
+            <p><strong>Time:</strong> [Time - e.g., 10:00 AM - 3:00 PM]</p>
+            <p><strong>Location:</strong> [Venue Name and Address]</p>
+            <p><strong>Dress Code:</strong> [e.g., Semi-formal/Business casual]</p>
+        </div>
+
+        <!-- Google Forms Integration -->
+        <form id="rsvpForm" action="https://docs.google.com/forms/d/e/YOUR_FORM_ID/formResponse" method="POST" target="hidden_iframe">
+            <div class="form-group">
+                <label for="guestName">Your Name *</label>
+                <input type="text" id="guestName" name="entry.YOUR_NAME_FIELD_ID" required>
+            </div>
+
+            <div class="form-group">
+                <label for="guestEmail">Email Address</label>
+                <input type="email" id="guestEmail" name="entry.YOUR_EMAIL_FIELD_ID">
+            </div>
+
+            <div class="form-group">
+                <label>Will you be attending? *</label>
+                <div class="rsvp-options">
+                    <div class="rsvp-option">
+                        <input type="radio" id="attending" name="entry.YOUR_RSVP_FIELD_ID" value="Coming" required>
+                        <label for="attending">✓ Coming</label>
+                    </div>
+                    <div class="rsvp-option">
+                        <input type="radio" id="notAttending" name="entry.YOUR_RSVP_FIELD_ID" value="Not Coming" required>
+                        <label for="notAttending">✗ Not Coming</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group guest-count" id="guestCountGroup">
+                <label for="guestCount">Number of Guests (including yourself) *</label>
+                <select id="guestCount" name="entry.YOUR_GUEST_COUNT_FIELD_ID">
+                    <option value="1">1 Guest</option>
+                    <option value="2">2 Guests</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests</option>
+                    <option value="5">5 Guests</option>
+                    <option value="6">6+ Guests</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="dietaryRestrictions">Dietary Restrictions or Special Requests</label>
+                <input type="text" id="dietaryRestrictions" name="entry.YOUR_DIETARY_FIELD_ID" placeholder="e.g., Vegetarian, Kosher, Allergies">
+            </div>
+
+            <button type="submit" class="submit-btn">Send RSVP</button>
+        </form>
+
+        <!-- Hidden iframe for form submission -->
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+        <div class="success-message" id="successMessage">
+            <h3>Thank you for your RSVP!</h3>
+            <p>We've received your response and look forward to celebrating with you.</p>
+        </div>
+
+        <div class="whatsapp-share">
+            <p style="color: #666; margin-bottom: 15px;">Share this RSVP with others:</p>
+            <a href="#" class="whatsapp-btn" id="whatsappShare">📱 Share via WhatsApp</a>
+        </div>
+    </div>
+
+    <script>
+        // Show/hide guest count based on RSVP selection
+        document.querySelectorAll('input[name="entry.YOUR_RSVP_FIELD_ID"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const guestCountGroup = document.getElementById('guestCountGroup');
+                if (this.value === 'Coming') {
+                    guestCountGroup.classList.add('show');
+                    document.getElementById('guestCount').required = true;
+                } else {
+                    guestCountGroup.classList.remove('show');
+                    document.getElementById('guestCount').required = false;
+                }
+            });
+        });
+
+        // Handle form submission
+        document.getElementById('rsvpForm').addEventListener('submit', function(e) {
+            // Let the form submit naturally to Google Forms
+            setTimeout(function() {
+                // Show success message after form submission
+                document.getElementById('rsvpForm').style.display = 'none';
+                document.getElementById('successMessage').style.display = 'block';
+            }, 1000);
+        });
+
+        // WhatsApp sharing
+        document.getElementById('whatsappShare').addEventListener('click', function(e) {
+            e.preventDefault();
+            const message = encodeURIComponent(
+                `You're invited to [Your Son's Name]'s Bar Mitzvah! Please RSVP at: ${window.location.href}`
+            );
+            window.open(`https://wa.me/?text=${message}`, '_blank');
+        });
+    </script>
+</body>
+</html>
+

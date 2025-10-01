@@ -1,0 +1,141 @@
+[
+  {
+    "id": "guest_001",
+    "name": "John Smith",
+    "phone": "+1234567890",
+    "family": "Smith Family",
+    "inviteCode": "js_abc123"
+  },
+  {
+    "id": "guest_002",
+    "name": "Sarah Johnson",
+    "phone": "+1234567891",
+    "family": "Johnson Family",
+    "inviteCode": "sj_def456"
+  },
+  {
+    "id": "guest_003",
+    "name": "Michael Cohen",
+    "phone": "+1234567892",
+    "family": "Cohen Family",
+    "inviteCode": "mc_ghi789"
+  },
+  {
+    "id": "guest_004",
+    "name": "Rachel Green",
+    "phone": "+1234567893",
+    "family": "Green Family",
+    "inviteCode": "rg_jkl012"
+  },
+  {
+    "id": "guest_005",
+    "name": "David Miller",
+    "phone": "+1234567894",
+    "family": "Miller Family",
+    "inviteCode": "dm_mno345"
+  },
+  {
+    "id": "guest_1759349598775_0jdmn5q5w",
+    "name": "John Smith",
+    "phone": "+1234567890",
+    "family": "Smith Family",
+    "inviteCode": "js_3216fe",
+    "createdAt": "2025-10-01T20:13:18.775Z"
+  },
+  {
+    "id": "guest_1759349598775_cndqovmka",
+    "name": "Sarah Johnson",
+    "phone": "+1234567891",
+    "family": "Johnson Family",
+    "inviteCode": "sj_afe002",
+    "createdAt": "2025-10-01T20:13:18.775Z"
+  },
+  {
+    "id": "guest_1759349598775_h4u49xc3r",
+    "name": "Michael Cohen",
+    "phone": "+1234567892",
+    "family": "Cohen Family",
+    "inviteCode": "mc_49cbbe",
+    "createdAt": "2025-10-01T20:13:18.775Z"
+  },
+  {
+    "id": "guest_1759349598775_8qcn4b1g7",
+    "name": "Rachel Green",
+    "phone": "+1234567893",
+    "family": "Green Family",
+    "inviteCode": "rg_73d813",
+    "createdAt": "2025-10-01T20:13:18.775Z"
+  },
+  {
+    "id": "guest_1759349598775_92b9dx61x",
+    "name": "David Miller",
+    "phone": "+1234567894",
+    "family": "Miller Family",
+    "inviteCode": "dm_d12e76",
+    "createdAt": "2025-10-01T20:13:18.775Z"
+  },
+  {
+    "id": "guest_1759349598775_u24lwt4w2",
+    "name": "Lisa Wilson",
+    "phone": "+1234567895",
+    "family": "Wilson Family",
+    "inviteCode": "lw_1bdd0a",
+    "createdAt": "2025-10-01T20:13:18.775Z"
+  },
+  {
+    "id": "guest_1759349598775_ct4wtfofz",
+    "name": "Robert Brown",
+    "phone": "+1234567896",
+    "family": "Brown Family",
+    "inviteCode": "rb_04f516",
+    "createdAt": "2025-10-01T20:13:18.775Z"
+  },
+  {
+    "id": "guest_1759349598775_n0ssprqpd",
+    "name": "Jennifer Davis",
+    "phone": "+1234567897",
+    "family": "Davis Family",
+    "inviteCode": "jd_21b191",
+    "createdAt": "2025-10-01T20:13:18.775Z"
+  },
+  {
+    "id": "guest_1759349598775_wxetyqh1c",
+    "name": "William Garcia",
+    "phone": "+1234567898",
+    "family": "Garcia Family",
+    "inviteCode": "wg_3c6590",
+    "createdAt": "2025-10-01T20:13:18.775Z"
+  },
+  {
+    "id": "guest_1759349598775_afay71jwi",
+    "name": "Elizabeth Rodriguez",
+    "phone": "+1234567899",
+    "family": "Rodriguez Family",
+    "inviteCode": "er_e43644",
+    "createdAt": "2025-10-01T20:13:18.775Z"
+  },
+  {
+    "id": "guest_1759351010374",
+    "name": "איתי כץ",
+    "phone": "",
+    "family": "איתי כץ",
+    "inviteCode": "_c0e360",
+    "createdAt": "2025-10-01T20:36:50.374Z"
+  },
+  {
+    "id": "guest_1759351019618",
+    "name": "מוקי כץ",
+    "phone": "",
+    "family": "מוקי כץ",
+    "inviteCode": "_3d7731",
+    "createdAt": "2025-10-01T20:36:59.618Z"
+  },
+  {
+    "id": "guest_1759351040963",
+    "name": "יניב שיבק",
+    "phone": "",
+    "family": "יניב שיבק",
+    "inviteCode": "_ec580a",
+    "createdAt": "2025-10-01T20:37:20.963Z"
+  }
+]

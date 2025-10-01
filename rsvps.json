@@ -1,0 +1,81 @@
+[
+  {
+    "id": "1759352812259",
+    "guestName": "מוקי כץ",
+    "rsvp": "attending",
+    "guestCount": "5",
+    "dietaryRestrictions": "none",
+    "inviteCode": "_3d7731",
+    "guestId": "guest_1759351019618",
+    "submittedAt": "2025-10-01T21:06:52.259Z"
+  },
+  {
+    "id": "1759353031446",
+    "guestName": "Robert Brown",
+    "rsvp": "not-attending",
+    "guestCount": "0",
+    "dietaryRestrictions": "none",
+    "inviteCode": "rb_04f516",
+    "guestId": "guest_1759349598775_ct4wtfofz",
+    "submittedAt": "2025-10-01T21:10:31.446Z"
+  },
+  {
+    "id": "1759353041942",
+    "guestName": "מוקי כץ",
+    "rsvp": "attending",
+    "guestCount": "4",
+    "dietaryRestrictions": "vegetarian",
+    "inviteCode": "_3d7731",
+    "guestId": "guest_1759351019618",
+    "submittedAt": "2025-10-01T21:10:41.942Z"
+  },
+  {
+    "id": "1759353174670",
+    "guestName": "Robert Brown",
+    "guestEmail": "",
+    "rsvp": "attending",
+    "guestCount": "2",
+    "dietaryRestrictions": "none",
+    "inviteCode": "rb_04f516",
+    "guestId": "guest_1759349598775_ct4wtfofz",
+    "submittedAt": "2025-10-01T21:12:54.670Z"
+  },
+  {
+    "id": "1759353563238",
+    "guestName": "מוקי כץ",
+    "guestEmail": "",
+    "rsvp": "attending",
+    "guestCount": "10",
+    "dietaryRestrictions": "none",
+    "inviteCode": "_3d7731",
+    "guestId": "guest_1759351019618",
+    "submittedAt": "2025-10-01T21:19:23.238Z"
+  },
+  {
+    "id": "1759356640876",
+    "guestName": "kkk",
+    "rsvp": "not-attending",
+    "guestCount": "0",
+    "dietaryRestrictions": "none",
+    "inviteCode": "[INVITE_CODE]",
+    "submittedAt": "2025-10-01T22:10:40.876Z"
+  },
+  {
+    "id": "1759356654515",
+    "guestName": "ggg",
+    "rsvp": "attending",
+    "guestCount": "5",
+    "dietaryRestrictions": "vegetarian",
+    "inviteCode": "[INVITE_CODE]",
+    "submittedAt": "2025-10-01T22:10:54.515Z"
+  },
+  {
+    "id": "1759356750082",
+    "guestName": "משה מזרחי",
+    "rsvp": "attending",
+    "guestCount": "4",
+    "dietaryRestrictions": "none",
+    "inviteCode": "[INVITE_CODE]",
+    "submittedAt": "2025-10-01T22:12:30.082Z"
+  }
+]

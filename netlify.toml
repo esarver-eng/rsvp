@@ -1,0 +1,15 @@
+# Netlify configuration for static hosting (Google Forms version)
+[build]
+  publish = "."
+  
+[[redirects]]
+  from = "/*"
+  to = "/google-forms-version.html"
+  status = 200
+  
+# For Node.js version on Netlify Functions (advanced)
+# [build]
+#   command = "npm install"
+#   functions = "netlify/functions"
+#   publish = "."
+

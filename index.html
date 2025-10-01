@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>הזמנה לבר מצווה - [FAMILY_NAME]</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            direction: rtl;
+            text-align: right;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .header {
+            margin-bottom: 30px;
+        }
+
+
+        h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 10px;
+            font-weight: normal;
+        }
+
+        .personal-greeting {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+        }
+
+        .personal-greeting h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .personal-greeting p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .event-details {
+            background: #f8f9ff;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+            border-left: 4px solid #667eea;
+        }
+
+        .event-details h3 {
+            color: #667eea;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .event-details p {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="email"], select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus, input[type="email"]:focus, select:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        input[type="text"]:disabled {
+            background: #f8f9fa;
+            color: #666;
+        }
+
+        .rsvp-options {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .rsvp-option {
+            flex: 1;
+            position: relative;
+        }
+
+        .rsvp-option input[type="radio"] {
+            display: none;
+        }
+
+        .rsvp-option label {
+            display: block;
+            padding: 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .rsvp-option input[type="radio"]:checked + label {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+        }
+
+        .guest-count {
+            display: none;
+            animation: slideDown 0.3s ease-out;
+        }
+
+        .guest-count.show {
+            display: block;
+        }
+
+        .guest-count-options {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .guest-count-option {
+            position: relative;
+        }
+
+        .guest-count-option input[type="radio"] {
+            display: none;
+        }
+
+        .guest-count-option label {
+            display: block;
+            padding: 12px 8px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            font-weight: bold;
+            font-size: 14px;
+            background: white;
+        }
+
+        .guest-count-option input[type="radio"]:checked + label {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+            transform: scale(1.05);
+        }
+
+        .guest-count-option label:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+
+        .dietary-options {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .dietary-option {
+            position: relative;
+        }
+
+        .dietary-option input[type="radio"] {
+            display: none;
+        }
+
+        .dietary-option label {
+            display: block;
+            padding: 12px 20px;
+            border: 2px solid #e1e5e9;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            font-weight: bold;
+            background: white;
+        }
+
+        .dietary-option input[type="radio"]:checked + label {
+            background: #667eea;
+            color: white;
+            border-color: #667eea;
+            transform: scale(1.05);
+        }
+
+        .dietary-option label:hover {
+            border-color: #667eea;
+            background: #f8f9ff;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            border-radius: 25px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            transform: none;
+            cursor: not-allowed;
+            background: #ccc;
+            color: #666;
+        }
+
+        .form-help {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-top: 10px;
+            font-style: italic;
+            direction: rtl;
+        }
+
+        /* Hebrew text support */
+        h1, h2, h3, p, label, .form-help {
+            font-family: 'Arial', 'Tahoma', sans-serif;
+            direction: rtl;
+            text-align: right;
+        }
+
+        .rsvp-option label, .guest-count-option label, .dietary-option label {
+            direction: rtl;
+            text-align: center;
+        }
+
+
+        .success-message {
+            display: none;
+            background: #d4edda;
+            color: #155724;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            .rsvp-options {
+                flex-direction: column;
+            }
+            
+            .guest-count-options {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 8px;
+            }
+            
+            .guest-count-option label {
+                padding: 10px 6px;
+                font-size: 13px;
+            }
+            
+            .dietary-options {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .dietary-option label {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="personal-greeting">
+            <h2>שלום!</h2>
+            <p>אנחנו מתרגשים לחגוג איתך את היום המיוחד הזה</p>
+        </div>
+
+        <div class="event-details">
+            <h3>בר המצווה של דניאל</h3>
+            <p><strong>תאריך:</strong> 10 בנובמבר </p>
+            <p><strong>שעה:</strong> 15:30 </p>
+        </div>
+
+        <form id="rsvpForm">
+            <input type="hidden" id="inviteCode" name="inviteCode" value="[INVITE_CODE]">
+            
+            <div class="form-group">
+                <label for="guestName">שם מלא *</label>
+                <input type="text" id="guestName" name="guestName" required placeholder="הכנס את שמך המלא">
+            </div>
+
+            <div class="form-group">
+                <label>האם תגיע? *</label>
+                <div class="rsvp-options">
+                    <div class="rsvp-option">
+                        <input type="radio" id="attending" name="rsvp" value="attending" required>
+                        <label for="attending">✓ מגיע</label>
+                    </div>
+                    <div class="rsvp-option">
+                        <input type="radio" id="notAttending" name="rsvp" value="not-attending" required>
+                        <label for="notAttending">✗ לא מגיע</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group guest-count" id="guestCountGroup">
+                <label for="guestCount">כמה אנשים יגיעו? (כולל אותך) *</label>
+                <div class="guest-count-options">
+                    <div class="guest-count-option">
+                        <input type="radio" id="guest1" name="guestCount" value="1">
+                        <label for="guest1">1 איש</label>
+                    </div>
+                    <div class="guest-count-option">
+                        <input type="radio" id="guest2" name="guestCount" value="2">
+                        <label for="guest2">2 אנשים</label>
+                    </div>
+                    <div class="guest-count-option">
+                        <input type="radio" id="guest3" name="guestCount" value="3">
+                        <label for="guest3">3 אנשים</label>
+                    </div>
+                    <div class="guest-count-option">
+                        <input type="radio" id="guest4" name="guestCount" value="4">
+                        <label for="guest4">4 אנשים</label>
+                    </div>
+                    <div class="guest-count-option">
+                        <input type="radio" id="guest5" name="guestCount" value="5">
+                        <label for="guest5">5 אנשים</label>
+                    </div>
+                    <div class="guest-count-option">
+                        <input type="radio" id="guest6" name="guestCount" value="6">
+                        <label for="guest6">6 אנשים</label>
+                    </div>
+                    <div class="guest-count-option">
+                        <input type="radio" id="guest7" name="guestCount" value="7">
+                        <label for="guest7">7 אנשים</label>
+                    </div>
+                    <div class="guest-count-option">
+                        <input type="radio" id="guest8" name="guestCount" value="8">
+                        <label for="guest8">8 אנשים</label>
+                    </div>
+                    <div class="guest-count-option">
+                        <input type="radio" id="guest9" name="guestCount" value="9">
+                        <label for="guest9">9 אנשים</label>
+                    </div>
+                    <div class="guest-count-option">
+                        <input type="radio" id="guest10" name="guestCount" value="10">
+                        <label for="guest10">10 אנשים</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>הגבלות תזונתיות</label>
+                <div class="dietary-options">
+                    <div class="dietary-option">
+                        <input type="radio" id="dietaryNone" name="dietaryRestrictions" value="none" checked>
+                        <label for="dietaryNone">אין</label>
+                    </div>
+                    <div class="dietary-option">
+                        <input type="radio" id="dietaryVegetarian" name="dietaryRestrictions" value="vegetarian">
+                        <label for="dietaryVegetarian">צמחוני</label>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn" disabled>שלח אישור הגעה</button>
+            <p class="form-help" id="formHelp">אנא בחר את סטטוס ההגעה שלך כדי להמשיך</p>
+        </form>
+
+        <div class="success-message" id="successMessage">
+            <h3>תודה על אישור ההגעה שלך!</h3>
+            <p>קיבלנו את התגובה שלך ואנחנו מצפים לחגוג איתך!</p>
+        </div>
+
+    </div>
+
+    <script>
+        // Function to check if form is valid and enable/disable submit button
+        function validateForm() {
+            const guestName = document.getElementById('guestName').value.trim();
+            const rsvpSelected = document.querySelector('input[name="rsvp"]:checked');
+            const submitBtn = document.querySelector('.submit-btn');
+            const helpText = document.getElementById('formHelp');
+            
+            if (!guestName) {
+                submitBtn.disabled = true;
+                helpText.textContent = 'אנא הכנס את שמך המלא';
+                return;
+            }
+            
+            if (!rsvpSelected) {
+                submitBtn.disabled = true;
+                helpText.textContent = 'אנא בחר את סטטוס ההגעה שלך כדי להמשיך';
+                return;
+            }
+            
+            if (rsvpSelected.value === 'attending') {
+                const guestCountSelected = document.querySelector('input[name="guestCount"]:checked');
+                if (!guestCountSelected) {
+                    submitBtn.disabled = true;
+                    helpText.textContent = 'אנא בחר כמה אנשים יגיעו';
+                } else {
+                    submitBtn.disabled = false;
+                    helpText.textContent = 'מוכן לשלוח את אישור ההגעה!';
+                }
+            } else {
+                // For "not attending", no guest count needed
+                submitBtn.disabled = false;
+                helpText.textContent = 'מוכן לשלוח את אישור ההגעה!';
+            }
+        }
+
+        // Show/hide guest count based on RSVP selection
+        document.querySelectorAll('input[name="rsvp"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                const guestCountGroup = document.getElementById('guestCountGroup');
+                const guestCountInputs = document.querySelectorAll('input[name="guestCount"]');
+                
+                if (this.value === 'attending') {
+                    guestCountGroup.classList.add('show');
+                    guestCountInputs.forEach(input => input.required = true);
+                } else {
+                    guestCountGroup.classList.remove('show');
+                    guestCountInputs.forEach(input => {
+                        input.required = false;
+                        input.checked = false;
+                    });
+                }
+                
+                // Validate form after RSVP selection
+                validateForm();
+            });
+        });
+
+        // Add event listeners to guest count options
+        document.querySelectorAll('input[name="guestCount"]').forEach(radio => {
+            radio.addEventListener('change', validateForm);
+        });
+
+        // Add event listener to name field
+        document.getElementById('guestName').addEventListener('input', validateForm);
+
+        // Handle form submission
+        document.getElementById('rsvpForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Disable submit button during submission
+            const submitBtn = document.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
+            
+            try {
+                const response = await fetch('/submit-rsvp', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    // Hide form and greeting, show success message
+                    document.getElementById('rsvpForm').style.display = 'none';
+                    document.querySelector('.personal-greeting').style.display = 'none';
+                    document.getElementById('successMessage').style.display = 'block';
+                } else {
+                    throw new Error(result.message || 'Failed to submit RSVP');
+                }
+            } catch (error) {
+                console.error('Error submitting RSVP:', error);
+                alert('Sorry, there was an error submitting your RSVP. Please try again.');
+                
+                // Re-enable submit button
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+
+    </script>
+</body>
+</html>
+
