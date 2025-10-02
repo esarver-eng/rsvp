@@ -259,7 +259,7 @@
                 document.getElementById('errorMessage').style.display = 'none';
                 document.getElementById('rsvpTable').style.display = 'none';
 
-                const response = await fetch('/admin/rsvps');
+                const response = await fetch('/legion/rsvps');
                 const data = await response.json();
 
                 if (data.success) {

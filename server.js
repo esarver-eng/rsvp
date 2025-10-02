@@ -173,7 +173,7 @@ app.post('/submit-rsvp', (req, res) => {
 });
 
 // Route to view all RSVPs (for the host)
-app.get('/admin/rsvps', (req, res) => {
+app.get('/legion/rsvps', (req, res) => {
     try {
         const rsvps = readRSVPs();
         
@@ -314,12 +314,12 @@ function generateInviteCode(name) {
 }
 
 // Route to serve admin dashboard
-app.get('/admin', (req, res) => {
+app.get('/legion', (req, res) => {
     res.sendFile(path.join(__dirname, 'admin.html'));
 });
 
 // Route to serve guest manager
-app.get('/admin/guests-manager', (req, res) => {
+app.get('/legion/guests-manager', (req, res) => {
     res.sendFile(path.join(__dirname, 'guest-manager.html'));
 });
 
